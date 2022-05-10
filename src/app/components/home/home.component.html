@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let item of character$ | async">
+        <img src="{{item.image}}" alt="{{item.name}}" width="50px"> Nombre - {{item.name}} | Status - {{item.status}} | Species - {{item.species}} | Gender - {{item.gender}}
+    </li>
+</ul>
