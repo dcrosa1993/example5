@@ -1,5 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CommonModule } from '@angular/common';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HomeRoutingModule } from './home-routing.module';
+import { ApolloTestingModule } from 'apollo-angular/testing';
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
@@ -8,7 +10,8 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent ],
+      imports: [CommonModule, HomeRoutingModule, ApolloTestingModule],
     })
     .compileComponents();
   });
@@ -21,11 +24,6 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('Comprobando que la variable no este indefinida', async() => {
-    const check = component.character$;
-    expect(check).not.toBeUndefined();
   });
 
 });
